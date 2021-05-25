@@ -1,0 +1,35 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Index</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link th:href="@{/css/style.css}" rel="stylesheet">
+</head>
+<body>
+<h1 th:text="${title}"></h1>
+    <table>
+        <thead>
+        <tr>
+            <th>ユーザID</th>
+            <th>名前</th>
+            <th>Mail</th>
+            <th>郵便番号</th>
+            <th>住所１</th>
+            <th>住所２</th>
+            <th>住所３</th>
+            <th>電話番号</th>
+        </tr>
+        </thead>
+        <tr th:each="user : ${userList}">
+            <td th:text="${user.userid}" ></td>
+            <td th:text="${user.name}" ></td>
+            <td th:text="${user.mailaddress}" ></td>
+            <td th:text="${user.zipcode}" ></td>
+            <td th:text="${user.address1}" ></td>
+            <td th:text="${user.address2}" ></td>
+            <td th:text="${user.address3}" ></td>
+            <td th:text="${user.telno}" ></td>
+        </tr>
+    </table>
+</body>
+</html>
